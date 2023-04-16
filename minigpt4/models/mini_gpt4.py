@@ -92,11 +92,11 @@ class MiniGPT4(Blip2Base):
 
         if llama_cache_dir:
             self.llama_model = LlamaForCausalLM.from_pretrained(
-                llama_model, load_in_8bit=True, torch_dtype=torch.float16, device_map={'': 0}, cache_dir=llama_cache_dir
+                llama_model, load_in_8bit=True, torch_dtype=torch.float16, device_map={'': 0}, cache_dir=llama_cache_dir, from_tf=True
             )
         else:
             self.llama_model = LlamaForCausalLM.from_pretrained(
-                llama_model, load_in_8bit=True, torch_dtype=torch.float16, device_map={'': 0}
+                llama_model, load_in_8bit=True, torch_dtype=torch.float16, device_map={'': 0}, from_tf=True
             )
         for name, param in self.llama_model.named_parameters():
             param.requires_grad = False
