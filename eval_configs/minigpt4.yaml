@@ -12,7 +12,7 @@ model:
   end_sym: "###"
   prompt_path: "prompts/alignment.txt"
   prompt_template: '###Human: {} ###Assistant: '
-  ckpt: '/ibex/project/c2133/vicuna_ckpt_test/Vicuna_stage3_align/20230412191_laion_ckpt3/checkpoint_1.pth'
+  ckpt: 'checkpoint.pth'
 
 
 datasets:
