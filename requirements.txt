@@ -1,6 +1,7 @@
 torch
 torchvision
 salesforce-lavis
+bitsandbytes
 transformers==4.28.1
 accelerate==0.16.0
 sentence-transformers==2.2.2
