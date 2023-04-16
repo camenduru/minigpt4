@@ -1,4 +1,4 @@
-torch=1.12.1
+torch==1.12.1
 torchvision
 salesforce-lavis
 bitsandbytes
