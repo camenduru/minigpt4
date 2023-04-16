@@ -75,7 +75,7 @@ class MiniGPT4(Blip2Base):
         for layer in self.Qformer.bert.encoder.layer:
             layer.output = None
             layer.intermediate = None
-        self.load_from_pretrained(cache_dir=q_former_model)
+        self.load_from_pretrained(url_or_filename=q_former_model)
 
         if freeze_qformer:
             for name, param in self.Qformer.named_parameters():
