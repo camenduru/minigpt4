@@ -1,0 +1,7 @@
+recursive-include minigpt4/configs *.yaml *.json
+recursive-include minigpt4/projects *.yaml *.json
+
+recursive-exclude minigpt4/datasets/download_scripts *
+recursive-exclude minigpt4/output *
+
+include requirements.txt
