@@ -30,7 +30,7 @@ class MiniGPT4(Blip2Base):
     def __init__(
         self,
         vit_model="eva_clip_g",
-        q_former_model="https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth",
+        q_former_model="blip2_pretrained_flant5xxl.pth",
         img_size=224,
         drop_path_rate=0,
         use_grad_checkpoint=False,
@@ -75,7 +75,7 @@ class MiniGPT4(Blip2Base):
         for layer in self.Qformer.bert.encoder.layer:
             layer.output = None
             layer.intermediate = None
-        self.load_from_pretrained(url_or_filename=q_former_model)
+        self.load_from_pretrained(cache_dir=q_former_model)
 
         if freeze_qformer:
             for name, param in self.Qformer.named_parameters():
