@@ -1,5 +1,5 @@
 torch==1.12.1
-torchvision
+torchvision==0.13.1
 salesforce-lavis
 bitsandbytes
 transformers==4.28.1
