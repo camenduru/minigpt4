@@ -1,6 +1,7 @@
 torch==1.12.1
 torchvision==0.13.1
-salesforce-lavis
+torchaudio==0.12.1
+salesforce-lavis==1.0.1
 bitsandbytes
 transformers==4.28.1
 accelerate==0.16.0
