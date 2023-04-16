@@ -18,7 +18,7 @@ model:
   num_query_token: 32
 
   # Vicuna
-  llama_model: "/path/to/vicuna/weights/"
+  llama_model: "vicuna"
 
   # generation configs
   prompt: ""
