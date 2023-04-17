@@ -1,5 +1,5 @@
 ---
-title: MiniGPT
+title: MiniGPT-4
 emoji: 🚀
 colorFrom: purple
 colorTo: gray
