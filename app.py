@@ -66,13 +66,15 @@ print('Initialization Finished')
 # ========================================
 
 def gradio_reset(chat_state, img_list):
-    chat_state.messages = []
-    img_list = []
+    if chat_state is not None:
+        chat_state.messages = []
+    if img_list is not None:
+        img_list = []
     return None, gr.update(value=None, interactive=True), gr.update(placeholder='Please upload your image first', interactive=False), gr.update(value="Upload & Start Chat", interactive=True), chat_state, img_list
 
 def upload_img(gr_img, text_input, chat_state):
     if gr_img is None:
-        return None, None, gr.update(interactive=True)
+        return None, None, gr.update(interactive=True), chat_state, None
     chat_state = CONV_VISION.copy()
     img_list = []
     llm_message = chat.upload_img(gr_img, chat_state, img_list)
