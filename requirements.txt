@@ -6,3 +6,4 @@ git+https://github.com/huggingface/transformers.git
 accelerate==0.16.0
 sentence-transformers==2.2.2
 sentencepiece==0.1.97
+gradio
