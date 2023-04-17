@@ -3,7 +3,7 @@ torchvision==0.13.1
 torchaudio==0.12.1
 salesforce-lavis
 bitsandbytes
-transformers==4.28.1
+git+https://github.com/huggingface/transformers.git
 accelerate==0.16.0
 sentence-transformers==2.2.2
 sentencepiece==0.1.97
