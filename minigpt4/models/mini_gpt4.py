@@ -87,16 +87,16 @@ class MiniGPT4(Blip2Base):
         print('Loading Q-Former Done')
 
         print('Loading LLAMA')
-        self.llama_tokenizer = LlamaTokenizer.from_pretrained('Vision-CAIR/vicuna', use_fast=False, use_auth_token='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', subfolder="vicuna")
+        self.llama_tokenizer = LlamaTokenizer.from_pretrained('Vision-CAIR/vicuna', use_fast=False, use_auth_token='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')
         self.llama_tokenizer.pad_token = self.llama_tokenizer.eos_token
 
         if llama_cache_dir:
             self.llama_model = LlamaForCausalLM.from_pretrained(
-                'Vision-CAIR/vicuna', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto", use_auth_token='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', subfolder="vicuna"
+                'Vision-CAIR/vicuna', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto", use_auth_token='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'
             )
         else:
             self.llama_model = LlamaForCausalLM.from_pretrained(
-                'Vision-CAIR/vicuna', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto", use_auth_token='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', subfolder="vicuna"
+                'Vision-CAIR/vicuna', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto", use_auth_token='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'
             )
         for name, param in self.llama_model.named_parameters():
             param.requires_grad = False
