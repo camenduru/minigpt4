@@ -59,8 +59,6 @@ vis_processor = registry.get_processor_class(vis_processor_cfg.name).from_config
 chat = Chat(model, vis_processor)
 print('Initialization Finished')
 
-exit()
-
 # ========================================
 #             Gradio Setting
 # ========================================
