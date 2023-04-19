@@ -44,6 +44,8 @@ def setup_seeds(config):
     cudnn.benchmark = False
     cudnn.deterministic = True
 
+from huggingface_hub import hf_hub_download
+hf_hub_download(repo_id="vicuna", use_auth_token='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')
 
 # ========================================
 #             Model Initialization
