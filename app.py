@@ -93,9 +93,7 @@ def gradio_answer(chatbot, chat_state, img_list, num_beams, temperature):
 
 title = """<h1 align="center">Demo of MiniGPT-4</h1>"""
 description = """<h3>This is the demo of MiniGPT-4. Upload your images and start chatting!</h3>"""
-article = """<strong>Paper</strong>: <a href='https://github.com/Vision-CAIR/MiniGPT-4/blob/main/MiniGPT_4.pdf' target='_blank'>Here</a>
-<strong>Code</strong>: <a href='https://github.com/Vision-CAIR/MiniGPT-4' target='_blank'>Here</a>
-<strong>Project Page</strong>: <a href='https://minigpt-4.github.io/' target='_blank'>Here</a>
+article = """<p><a href='https://minigpt-4.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a></p><p><a href='https://github.com/Vision-CAIR/MiniGPT-4'><img src='https://img.shields.io/badge/Github-Code-blue'></a></p><p><a href='https://github.com/TsuTikgiau/blip2-llm/blob/release_prepare/MiniGPT_4.pdf'><img src='https://img.shields.io/badge/Paper-PDF-red'></a></p>
 """
 
 #TODO show examples below
@@ -113,8 +111,8 @@ with gr.Blocks() as demo:
             
             num_beams = gr.Slider(
                 minimum=1,
-                maximum=16,
-                value=5,
+                maximum=5,
+                value=1,
                 step=1,
                 interactive=True,
                 label="beam search numbers)",
