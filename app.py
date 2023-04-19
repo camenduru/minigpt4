@@ -19,9 +19,6 @@ from minigpt4.processors import *
 from minigpt4.runners import *
 from minigpt4.tasks import *
 
-print(f"Is CUDA available: {torch.cuda.is_available()}")
-print(f"CUDA device: {torch.cuda.get_device_name(torch.cuda.current_device())}")
-
 def parse_args():
     parser = argparse.ArgumentParser(description="Demo")
     parser.add_argument("--cfg-path", type=str, default='eval_configs/minigpt4.yaml', help="path to configuration file.")
@@ -61,6 +58,8 @@ vis_processor_cfg = cfg.datasets_cfg.cc_align.vis_processor.train
 vis_processor = registry.get_processor_class(vis_processor_cfg.name).from_config(vis_processor_cfg)
 chat = Chat(model, vis_processor)
 print('Initialization Finished')
+
+exit()
 
 # ========================================
 #             Gradio Setting
