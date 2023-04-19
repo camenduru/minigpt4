@@ -43,9 +43,6 @@ def setup_seeds(config):
 
     cudnn.benchmark = False
     cudnn.deterministic = True
-
-from huggingface_hub import snapshot_download
-snapshot_download(repo_id="Vision-CAIR/vicuna")
     
 # ========================================
 #             Model Initialization
