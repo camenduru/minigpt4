@@ -19,6 +19,8 @@ from minigpt4.processors import *
 from minigpt4.runners import *
 from minigpt4.tasks import *
 
+print(f"Is CUDA available: {torch.cuda.is_available()}")
+print(f"CUDA device: {torch.cuda.get_device_name(torch.cuda.current_device())}")
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Demo")
