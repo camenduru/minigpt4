@@ -112,6 +112,7 @@ article = """<p><a href='https://minigpt-4.github.io'><img src='https://img.shie
 
 with gr.Blocks() as demo:
     gr.Markdown(title)
+    gr.Markdown(SHARED_UI_WARNING)
     gr.Markdown(description)
     gr.Markdown(article)
 
