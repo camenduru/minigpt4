@@ -139,9 +139,8 @@ class Chat:
         conv.append_message(conv.roles[1], None)
         embs = self.get_context_emb(conv, img_list)
                    
-        current_max_len = embs.shape[1] + max_new_tokens
-        if current_max_len - max_length + 100 > 0:
-            begin_idx = max(0, current_max_len - max_length)
+        current_max_len = embs.shape[1] + max_new_tokens + 100
+        begin_idx = max(0, current_max_len - max_length)
         embs = embs[:, begin_idx:]
         outputs = self.model.llama_model.generate(
             inputs_embeds=embs,
