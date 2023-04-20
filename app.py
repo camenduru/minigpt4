@@ -47,11 +47,6 @@ def setup_seeds(config):
 #             Model Initialization
 # ========================================
 
-SHARED_UI_WARNING = f'''### [NOTE] It is possible that you are waiting in a lengthy queue.
-
-Alternatively, you can also use the demo on our [project page](https://minigpt-4.github.io).
-'''
-
 print('Initializing Chat')
 cfg = Config(parse_args())
 
@@ -98,14 +93,13 @@ def gradio_answer(chatbot, chat_state, img_list, num_beams, temperature):
 
 title = """<h1 align="center">Demo of MiniGPT-4</h1>"""
 description = """<h3>This is the demo of MiniGPT-4. Upload your images and start chatting!</h3>"""
-article = """<p><a href='https://minigpt-4.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a></p><p><a href='https://github.com/Vision-CAIR/MiniGPT-4'><img src='https://img.shields.io/badge/Github-Code-blue'></a></p><p><a href='https://github.com/TsuTikgiau/blip2-llm/blob/release_prepare/MiniGPT_4.pdf'><img src='https://img.shields.io/badge/Paper-PDF-red'></a></p>
+article = """<div style='display:flex; gap: 0.25rem; '><a href='https://minigpt-4.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a><a href='https://github.com/Vision-CAIR/MiniGPT-4'><img src='https://img.shields.io/badge/Github-Code-blue'></a><a href='https://github.com/TsuTikgiau/blip2-llm/blob/release_prepare/MiniGPT_4.pdf'><img src='https://img.shields.io/badge/Paper-PDF-red'></a></div>
 """
 
 #TODO show examples below
 
 with gr.Blocks() as demo:
     gr.Markdown(title)
-    gr.Markdown(SHARED_UI_WARNING)
     gr.Markdown(description)
     gr.Markdown(article)
 
@@ -147,4 +141,4 @@ with gr.Blocks() as demo:
     )
     clear.click(gradio_reset, [chat_state, img_list], [chatbot, image, text_input, upload_button, chat_state, img_list], queue=False)
 
-demo.launch(enable_queue=True)
+demo.launch(enable_queue=True, share=True)
