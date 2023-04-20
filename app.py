@@ -49,10 +49,6 @@ def setup_seeds(config):
 
 SHARED_UI_WARNING = f'''### [NOTE] It is possible that you are waiting in a lengthy queue.
 
-You can duplicate and use it with a paid private GPU.
-
-<a class="duplicate-button" style="display:inline-block" target="_blank" href="https://huggingface.co/spaces/Vision-CAIR/minigpt4?duplicate=true"><img style="margin-top:0;margin-bottom:0" src="https://huggingface.co/datasets/huggingface/badges/raw/main/duplicate-this-space-xl-dark.svg" alt="Duplicate Space"></a>
-
 Alternatively, you can also use the demo on our [project page](https://minigpt-4.github.io).
 '''
 
