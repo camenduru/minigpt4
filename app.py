@@ -53,10 +53,7 @@ You can duplicate and use it with a paid private GPU.
 
 <a class="duplicate-button" style="display:inline-block" target="_blank" href="https://huggingface.co/spaces/Vision-CAIR/minigpt4?duplicate=true"><img style="margin-top:0;margin-bottom:0" src="https://huggingface.co/datasets/huggingface/badges/raw/main/duplicate-this-space-xl-dark.svg" alt="Duplicate Space"></a>
 
-Alternatively, you can also use the demo on our project page.
-
-<a style="display:inline-block" href="https://minigpt-4.github.io"><img style="margin-top:0;margin-bottom:0" src="https://img.shields.io/badge/Project%20Page-online-brightgreen"></a>
-
+Alternatively, you can also use the demo on our [project page](https://minigpt-4.github.io).
 '''
 
 print('Initializing Chat')
