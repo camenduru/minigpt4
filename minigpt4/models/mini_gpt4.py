@@ -130,9 +130,7 @@ class MiniGPT4(Blip2Base):
         image = image.to("cpu")
         with self.maybe_autocast():
             image_embeds = self.ln_vision(self.visual_encoder(image)).to(device)
-            image_atts = torch.ones(image_embeds.size()[:-1], dtype=torch.long).to(
-                image.device
-            )
+            image_atts = torch.ones(image_embeds.size()[:-1], dtype=torch.long).to(device)
 
             query_tokens = self.query_tokens.expand(image_embeds.shape[0], -1, -1)
             query_output = self.Qformer.bert(
