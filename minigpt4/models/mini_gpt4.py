@@ -87,16 +87,16 @@ class MiniGPT4(Blip2Base):
         print('Loading Q-Former Done')
 
         print('Loading LLAMA')
-        self.llama_tokenizer = LlamaTokenizer.from_pretrained('camenduru/MiniGPT4', use_fast=False)
+        self.llama_tokenizer = LlamaTokenizer.from_pretrained('camenduru/MiniGPT4-7B', use_fast=False)
         self.llama_tokenizer.pad_token = self.llama_tokenizer.eos_token
 
         if llama_cache_dir:
             self.llama_model = LlamaForCausalLM.from_pretrained(
-                'camenduru/MiniGPT4', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto"
+                'camenduru/MiniGPT4-7B', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto"
             )
         else:
             self.llama_model = LlamaForCausalLM.from_pretrained(
-                'camenduru/MiniGPT4', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto"
+                'camenduru/MiniGPT4-7B', load_in_8bit=True, torch_dtype=torch.float16, device_map="auto"
             )
         for name, param in self.llama_model.named_parameters():
             param.requires_grad = False
